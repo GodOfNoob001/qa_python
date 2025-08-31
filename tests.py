@@ -158,3 +158,4 @@ class TestBooksCollector:
             collector.add_book_in_favorites(book_name[i])
         assert len(collector.get_list_of_favorites_books()) == len(collector.favorites)
         assert book_name[i] in collector.get_list_of_favorites_books()
+        
