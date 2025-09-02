@@ -30,8 +30,7 @@ class TestBooksCollector:
         assert len(collector.get_books_genre()) == 1
 
     @pytest.mark.parametrize('invalid_value', ['123456789012345678901234567890123456789012', '12345678901234567890123456789012345678901', ''])
-    def test_add_new_book_add_one_book_invalid_value(self, invalid_value):
-        collector = BooksCollector()
+    def test_add_new_book_add_one_book_invalid_value(self, invalid_value, collector):
         collector.add_new_book(invalid_value)
         assert len(collector.get_books_genre()) == 0
 
