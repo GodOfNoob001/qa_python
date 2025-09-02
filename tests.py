@@ -40,8 +40,7 @@ class TestBooksCollector:
         collector.add_new_book(same_name)
         assert len(collector.get_books_genre()) != 2
 
-    def test_set_book_genre_valid_value_genre_in_collection(self):
-        collector = BooksCollector()
+    def test_set_book_genre_valid_value_genre_in_collection(self, collector):
         book_name = 'Пикник на обочине'
         collector.add_new_book(book_name)
         collector.set_book_genre(book_name, 'Фантастика')
