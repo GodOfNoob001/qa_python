@@ -58,8 +58,7 @@ class TestBooksCollector:
         collector.set_book_genre(book_name, book_genre)
         assert collector.get_book_genre(book_name) == book_genre
 
-    def test_get_book_genre_invalid_value_genre_not_set_to_book(self):
-        collector = BooksCollector()
+    def test_get_book_genre_invalid_value_genre_not_set_to_book(self, collector):
         collector.add_new_book('Пикник на обочине')
         assert collector.get_book_genre('Пикник на обочине') == ''
 
