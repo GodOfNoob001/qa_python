@@ -34,8 +34,7 @@ class TestBooksCollector:
         collector.add_new_book(invalid_value)
         assert len(collector.get_books_genre()) == 0
 
-    def test_add_new_book_add_two_same_books(self):
-        collector = BooksCollector()
+    def test_add_new_book_add_two_same_books(self, collector):
         same_name = 'Над пропастью во ржи'
         collector.add_new_book(same_name)
         collector.add_new_book(same_name)
