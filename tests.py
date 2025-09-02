@@ -78,8 +78,8 @@ class TestBooksCollector:
         for i in range(len(book_name)):
             collector.add_new_book(book_name[i])
             collector.set_book_genre(book_name[i], book_genre[i])
-        assert len(collector.get_books_genre()) == 3
-        assert book_name[i] in collector.get_books_genre()
+        books_genre = collector.get_books_genre()
+        assert sorted(books_genre) == sorted(book_name)
 
     def test_get_books_genre_empty_collection(self, collector):
         assert len(collector.get_books_genre()) == 0
