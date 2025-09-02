@@ -53,8 +53,7 @@ class TestBooksCollector:
         assert collector.books_genre[book_name] != 'Научная фантастика'
 
     @pytest.mark.parametrize('book_name, book_genre', [['Пикник на обочине', 'Фантастика'], ['451 градус по Фаренгейту', 'Ужасы'],['12 Стульев', 'Комедии']])
-    def test_get_book_genre_valid_value_book_in_collection(self, book_name, book_genre):
-        collector = BooksCollector()
+    def test_get_book_genre_valid_value_book_in_collection(self, book_name, book_genre, collector):
         collector.add_new_book(book_name)
         collector.set_book_genre(book_name, book_genre)
         assert collector.get_book_genre(book_name) == book_genre
