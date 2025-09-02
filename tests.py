@@ -38,7 +38,7 @@ class TestBooksCollector:
         same_name = 'Над пропастью во ржи'
         collector.add_new_book(same_name)
         collector.add_new_book(same_name)
-        assert len(collector.get_books_genre()) != 2
+        assert len(collector.get_books_genre()) != 2 and len(collector.get_books_genre()) > 0
 
     def test_set_book_genre_valid_value_genre_in_collection(self, collector):
         book_name = 'Пикник на обочине'
