@@ -133,8 +133,7 @@ class TestBooksCollector:
         collector.delete_book_from_favorites(book_name)
         assert book_name not in collector.favorites
 
-    def test_get_list_of_favorites_books(self):
-        collector = BooksCollector()
+    def test_get_list_of_favorites_books(self, collector):
         book_name = ['Пикник на обочине', '451 градус по Фаренгейту', 'Понедельник начинается в субботу']
         book_genre = ['Фантастика', 'Ужасы', 'Фантастика']
         for i in range(len(book_name)):
