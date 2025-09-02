@@ -25,8 +25,7 @@ class TestBooksCollector:
     # напиши свои тесты ниже
     # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector()
 
-    def test_add_new_book_add_one_book_valid_value(self):
-        collector = BooksCollector()
+    def test_add_new_book_add_one_book_valid_value(self, collector):
         collector.add_new_book('451 градус по фаренгейту')
         assert len(collector.get_books_genre()) == 1
 
