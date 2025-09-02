@@ -62,8 +62,7 @@ class TestBooksCollector:
         collector.add_new_book('Пикник на обочине')
         assert collector.get_book_genre('Пикник на обочине') == ''
 
-    def test_get_books_with_specific_genre_book_is_in_collection(self):
-        collector = BooksCollector()
+    def test_get_books_with_specific_genre_book_is_in_collection(self, collector):
         book_name = ['Пикник на обочине', '451 градус по Фаренгейту', 'Понедельник начинается в субботу']
         book_genre = ['Фантастика', 'Ужасы', 'Фантастика']
         for i in range(len(book_name)):
