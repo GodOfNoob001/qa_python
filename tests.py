@@ -111,8 +111,7 @@ class TestBooksCollector:
         assert book_name in collector.favorites
 
     @pytest.mark.parametrize('book_name', ['Пикник на обочине', '451 градус по Фаренгейту', '12 Стульев'])
-    def test_add_book_in_favorites_valid_value_book_without_genre_added_in_collection(self, book_name):
-        collector = BooksCollector()
+    def test_add_book_in_favorites_valid_value_book_without_genre_added_in_collection(self, book_name, collector):
         collector.add_new_book(book_name)
         collector.add_book_in_favorites(book_name)
         assert book_name in collector.favorites
