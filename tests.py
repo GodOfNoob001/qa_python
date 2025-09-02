@@ -10,10 +10,6 @@ class TestBooksCollector:
     # дальше идет название метода, который тестируем add_new_book_
     # затем, что тестируем add_two_books - добавление двух книг
     def test_add_new_book_add_two_books(self, collector):
-        # создаем экземпляр (объект) класса BooksCollector
-        collector = BooksCollector()
-
-        # добавляем две книги
         collector.add_new_book('Гордость и предубеждение и зомби')
         collector.add_new_book('Что делать, если ваш кот хочет вас убить')
 
@@ -103,15 +99,9 @@ class TestBooksCollector:
     @pytest.mark.parametrize('book_name', ['Пикник на обочине', '451 градус по Фаренгейту', '12 стульев'])
     def test_add_book_in_favorites_valid_value_book_added_in_collection(self, book_name, collector):
         collector.add_new_book(book_name)
-        collector.set_book_genre(book_name, book_genre)
         collector.add_book_in_favorites(book_name)
         assert book_name in collector.favorites
 
-    @pytest.mark.parametrize('book_name', ['Пикник на обочине', '451 градус по Фаренгейту', '12 Стульев'])
-    def test_add_book_in_favorites_valid_value_book_without_genre_added_in_collection(self, book_name, collector):
-        collector.add_new_book(book_name)
-        collector.add_book_in_favorites(book_name)
-        assert book_name in collector.favorites
 
     def test_add_book_in_favorites_invalid_value_add_two_same_books(self, collector):
         same_book = 'Пикник на обочине'
