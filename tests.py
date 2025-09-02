@@ -73,8 +73,7 @@ class TestBooksCollector:
         assert 'Пикник на обочине' in fantasy_books
         assert 'Понедельник начинается в субботу' in fantasy_books
 
-    def test_get_books_genre_not_empty_collection(self):
-        collector = BooksCollector()
+    def test_get_books_genre_not_empty_collection(self, collector):
         book_name = ['Пикник на обочине', '451 градус по Фаренгейту', 'Понедельник начинается в субботу']
         book_genre = ['Фантастика', 'Ужасы', 'Фантастика']
         for i in range(len(book_name)):
