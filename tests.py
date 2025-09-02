@@ -68,9 +68,9 @@ class TestBooksCollector:
             collector.add_new_book(book_name[i])
             collector.set_book_genre(book_name[i], book_genre[i])
         fantasy_books = collector.get_books_with_specific_genre('Фантастика')
-        assert len(fantasy_books) == 2
-        assert 'Пикник на обочине' in fantasy_books
-        assert 'Понедельник начинается в субботу' in fantasy_books
+        expected_books = ['Пикник на обочине', 'Понедельник начинается в субботу']
+        assert sorted(fantasy_books) == sorted(expected_books)
+
 
     def test_get_books_genre_not_empty_collection(self, collector):
         book_name = ['Пикник на обочине', '451 градус по Фаренгейту', 'Понедельник начинается в субботу']
