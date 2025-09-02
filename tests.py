@@ -92,8 +92,7 @@ class TestBooksCollector:
         books_for_children = collector.get_books_for_children()
         assert book_name in books_for_children
 
-    def test_get_books_for_children_invalid_value_book_age_rating_in_collection(self):
-        collector = BooksCollector()
+    def test_get_books_for_children_invalid_value_book_age_rating_in_collection(self, collector):
         book_name = ['Кошкин дом', 'Колобок', 'По щучьему велению']
         book_genre = ['Фантастика', 'Ужасы', 'Фантастика']
         for i in range(len(book_name)):
