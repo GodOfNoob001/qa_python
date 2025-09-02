@@ -116,8 +116,7 @@ class TestBooksCollector:
         collector.add_book_in_favorites(book_name)
         assert book_name in collector.favorites
 
-    def test_add_book_in_favorites_invalid_value_add_two_same_books(self):
-        collector = BooksCollector()
+    def test_add_book_in_favorites_invalid_value_add_two_same_books(self, collector):
         same_book = 'Пикник на обочине'
         collector.add_new_book(same_book)
         collector.add_book_in_favorites(same_book)
