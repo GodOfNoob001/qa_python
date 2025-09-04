@@ -82,6 +82,7 @@ class TestBooksCollector:
 
 
 
+
     def test_get_books_genre_empty_collection(self, collector):
         assert len(collector.get_books_genre()) == 0
 
