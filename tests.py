@@ -77,6 +77,11 @@ class TestBooksCollector:
         books_genre = collector.get_books_genre()
         assert sorted(books_genre) == sorted(book_name)
 
+    def test_get_books_genre_type_of_returned_answer_is_dict(self, collector):
+        assert type(collector.get_books_genre()) == dict
+
+
+
     def test_get_books_genre_empty_collection(self, collector):
         assert len(collector.get_books_genre()) == 0
 
